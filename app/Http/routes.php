@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-//Route::get('/', 'HomeController@index');
+Route::get('/', 'ByDefault\IndexController@index');
 //
 //Route::get('page/{slug}', 'PageController@show');
