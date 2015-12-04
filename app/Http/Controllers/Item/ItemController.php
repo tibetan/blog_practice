@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\ByDefault;
+namespace App\Http\Controllers\Item;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Item;
 
-class IndexController extends Controller
+class ItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,10 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('byDefault.index.index');
+        $items = Item::all()->sortByDesc(Item::UPDATED_AT);
+        return view('item.item.index')->with([
+            'items' => $items,
+        ]);
     }
 
     /**
@@ -48,7 +52,10 @@ class IndexController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = Item::find($id);
+        return view('item.item.show')->with([
+            'item' => $item,
+        ]);
     }
 
     /**

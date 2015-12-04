@@ -16,5 +16,7 @@
 //});
 
 Route::get('/', 'ByDefault\IndexController@index');
-//
-//Route::get('page/{slug}', 'PageController@show');
+Route::get('item', 'Item\ItemController@index');
+Route::get('item/{id}', 'Item\ItemController@show')
+        ->where('id', '[0-9]+');
+
