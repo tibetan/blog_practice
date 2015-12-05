@@ -10,15 +10,15 @@
     @foreach($items as $item)
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">{{ $item->header }}</h3>
+                <h3 class="panel-title">{{ $item->getAttributeValue($item::HEADER) }}</h3>
             </div>
             <div class="panel-body">
                 {{ $item->getAttributeValue($item::UPDATED_AT) }}
                 <hr>
-                @if (strlen($item->body) > 400)
-                    {{ substr($item->body, 0, 399) }}...
+                @if (strlen($item->getAttributeValue($item::BODY)) > 400)
+                    {{ substr($item->getAttributeValue($item::BODY), 0, 399) }}...
                 @else
-                    {{ $item->body }}
+                    {{ $item->getAttributeValue($item::BODY) }}
                 @endif
                 <hr>
                 <div>
