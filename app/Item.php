@@ -28,7 +28,7 @@ class Item extends Model
      */
     const BODY = 'body';
     
-    protected $fillable = ['header', 'body'];
+    protected $fillable = [self::HEADER, self::BODY];
     
     
 }
