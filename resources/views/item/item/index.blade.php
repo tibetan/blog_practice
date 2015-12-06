@@ -19,11 +19,7 @@
                 {{ $item->getAttributeValue($item::UPDATED_AT)->format('d/m/Y') }}
                 <span>Rubric</span>
                 <hr>
-                @if (strlen($item->getAttributeValue($item::BODY)) > 400)
-                    {{ substr($item->getAttributeValue($item::BODY), 0, 399) }}...
-                @else
-                    {{ $item->getAttributeValue($item::BODY) }}
-                @endif
+                    {{ str_limit($item->getAttributeValue($item::BODY), 400) }}
                 <hr>
                 <div>
                     <a href="#">Comments <span class="badge right">42</span></a>
