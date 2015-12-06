@@ -13,7 +13,7 @@
                 <h3 class="panel-title">{{ $item->getAttributeValue($item::HEADER) }}</h3>
             </div>
             <div class="panel-body">
-                {{ $item->getAttributeValue($item::UPDATED_AT) }}
+                {{ $item->getAttributeValue($item::UPDATED_AT)->format('d/m/Y') }}
                 <hr>
                 @if (strlen($item->getAttributeValue($item::BODY)) > 400)
                     {{ substr($item->getAttributeValue($item::BODY), 0, 399) }}...

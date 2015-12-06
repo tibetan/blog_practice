@@ -5,7 +5,7 @@
         <h2>{{ $item->getAttributeValue($item::HEADER) }}</h2>
     </div>
     <div>
-        <p>{{ $item->getAttributeValue($item::UPDATED_AT) }}</p>
+        <p>{{ $item->getAttributeValue($item::UPDATED_AT)->format('d/m/Y') }}</p>
     </div>
     <hr>
     <p>
