@@ -10,10 +10,14 @@
     @foreach($items as $item)
         <div class="panel panel-default">
             <div class="panel-heading">
+                <a href="#">
+                    <img src="{{ asset('img/thailand.jpg') }}" width="50" height="50" alt="user logo" class="img-circle">
+                </a>
                 <h3 class="panel-title">{{ $item->getAttributeValue($item::HEADER) }}</h3>
             </div>
             <div class="panel-body">
                 {{ $item->getAttributeValue($item::UPDATED_AT)->format('d/m/Y') }}
+                <span>Rubric</span>
                 <hr>
                 @if (strlen($item->getAttributeValue($item::BODY)) > 400)
                     {{ substr($item->getAttributeValue($item::BODY), 0, 399) }}...
