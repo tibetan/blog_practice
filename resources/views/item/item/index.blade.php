@@ -13,13 +13,20 @@
                 <a href="#">
                     <img src="{{ asset('img/thailand.jpg') }}" width="50" height="50" alt="user logo" class="img-circle">
                 </a>
-                <h3 class="panel-title">{{ $item->getAttributeValue($item::HEADER) }}</h3>
+                <h3 class="panel-title">
+                    <a href="{{ asset('item/'. $item->getAttributeValue($item::ID)) }}">
+                        {{ $item->getAttributeValue($item::HEADER) }}
+                    </a>
+                </h3>
             </div>
             <div class="panel-body">
                 {{ $item->getAttributeValue($item::UPDATED_AT)->format('d/m/Y') }}
                 <span>Rubric</span>
                 <hr>
-                    {{ str_limit($item->getAttributeValue($item::BODY), 400) }}
+                {{ str_limit($item->getAttributeValue($item::BODY), 400) }}
+                <a href="{{ asset('item/'. $item->getAttributeValue($item::ID)) }}">
+                    >
+                </a>
                 <hr>
                 <div>
                     <a href="#">Comments <span class="badge right">42</span></a>
