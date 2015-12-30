@@ -8,7 +8,7 @@
         <h2>{{ $item->getAttributeValue($item::HEADER) }}</h2>
     </div>
     <div>
-        <p>{{ $item->getAttributeValue($item::UPDATED_AT)->format('d/m/Y') }}</p>
+        <p>{{ $item->getAttributeValue($item::UPDATED_AT)->format(Lang::get('messages.date')) }}</p>
     </div>
     <hr>
     <p>

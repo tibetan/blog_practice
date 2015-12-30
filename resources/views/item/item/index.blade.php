@@ -20,7 +20,7 @@
                 </h3>
             </div>
             <div class="panel-body">
-                {{ $item->getAttributeValue($item::UPDATED_AT)->format('d/m/Y') }}
+                {{ $item->getAttributeValue($item::UPDATED_AT)->format(Lang::get('messages.date')) }}
                 <span>Rubric</span>
                 <hr>
                 {{ str_limit($item->getAttributeValue($item::BODY), 400) }}
